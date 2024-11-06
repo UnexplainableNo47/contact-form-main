@@ -1,6 +1,7 @@
 :root{
 --Green-200: hsl(148, 38%, 91%);
 --Green-600: hsl(169, 82%, 27%);
+--Green-900: hsl(168, 80%, 18%);
 --Red: hsl(0, 66%, 54%);
 
 --White: hsl(0, 0%, 100%);
@@ -14,6 +15,7 @@
     font-family: "Karla", sans-serif;
     color: var(--Grey-900);
     text-justify: distribute;
+    accent-color: var(--Green-600);
 }
 .container{
     height: 100vh;
@@ -56,6 +58,9 @@ input{
    padding-right: 0.75em;
    
 }
+label{
+    font-size: 0.85rem;
+}
 input:hover{
     border:2px solid var(--Green-600);
 }
@@ -97,13 +102,25 @@ input[type="radio"]:checked + label{
 input[type="radio"]:checked + label::before{
     border-color: var(--Green-600);
 }
+textarea{
+    accent-color: var(--Green-600);
+}
 .btnSubmit{
+    font-size: 1rem;
     margin-top: 1em;
     background-color: var(--Green-600);
     color: var(--White);
     height: 2.75em;
     border:1px solid var(--Green-600);
     border-radius: 0.4rem;
+    cursor: pointer;
+}
+.btnSubmit:hover{
+    box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6)
+
+}
+.btnSubmit:hover:focus{
+    background-color: var(--Green-900);
 }
 .popUp-panel{
     display: none;
@@ -136,7 +153,8 @@ input[type="radio"]:checked + label::before{
     padding-bottom: 0.25em;
 }
 .heading{
- grid-area: heading;
+    font-weight: 900;
+    grid-area: heading;
 }
 .item-1{
     grid-area: item-1;
@@ -164,6 +182,8 @@ input[type="radio"]:checked + label::before{
 }
 .item-6{
     grid-area: item-6;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
 }
 .item-6 > div > input{
     height: min-content;
