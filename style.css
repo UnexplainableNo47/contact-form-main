@@ -1,0 +1,208 @@
+:root {
+  --Green-200: hsl(148, 38%, 91%);
+  --Green-600: hsl(169, 82%, 27%);
+  --Red: hsl(0, 66%, 54%);
+  --White: hsl(0, 0%, 100%);
+  --Grey-500: hsl(186, 15%, 59%);
+  --Grey-900: hsl(187, 24%, 22%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Karla", sans-serif;
+  color: var(--Grey-900);
+  text-justify: distribute;
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+  background-color: var(--Green-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contactForm {
+  width: min(500px, 100%);
+  height: -moz-min-content;
+  height: min-content;
+  border-radius: 1rem;
+  padding: 2rem;
+  background-color: var(--White);
+  overflow: hidden;
+}
+
+form {
+  display: grid;
+  justify-content: space-around;
+  gap: 0.5em;
+  grid-template-areas: "heading heading" "item-1 item-2" "item-3 item-3" "item-4 item-4" "item-5 item-5" "item-6 item-6" "item-7 item-7";
+}
+
+form > div {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  height: 2.25em;
+  border: 1px solid var(--Grey-500);
+  border-radius: 0.4rem;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+}
+
+input:hover {
+  border: 2px solid var(--Green-600);
+}
+
+input:focus {
+  border: 2px solid var(--Green-600);
+}
+
+input[type=radio] + label {
+  height: 2.25rem;
+  border: 1px solid var(--Grey-500);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 0.4rem;
+  padding-left: 1em;
+  accent-color: var(--Lime);
+  transition: 0.3s ease-in-out;
+}
+
+input[type=radio] + label:hover {
+  border: 2px solid var(--Green-600);
+}
+
+input[type=radio] + label::before {
+  content: "";
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--Grey-500);
+  margin-right: 0.5em;
+}
+
+input[type=radio] + label:hover {
+  cursor: pointer;
+}
+
+input[type=radio] {
+  display: none;
+}
+
+input[type=radio]:checked + label {
+  background-color: var(--Green-200);
+  border: 1.5px solid var(--Green-600);
+}
+
+input[type=radio]:checked + label::before {
+  border-color: var(--Green-600);
+}
+
+.btnSubmit {
+  margin-top: 1em;
+  background-color: var(--Green-600);
+  color: var(--White);
+  height: 2.75em;
+  border: 1px solid var(--Green-600);
+  border-radius: 0.4rem;
+}
+
+.popUp-panel {
+  padding: 0.75em;
+  color: white;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 250px;
+  height: -moz-min-content;
+  height: min-content;
+  border-radius: 0.75rem;
+  background-color: black;
+  transition: 1s ease-in-out;
+  opacity: 0.9;
+}
+.popUp-panel p {
+  color: var(--Grey-500);
+}
+.popUp-panel h4 {
+  color: var(--White);
+}
+
+.error {
+  color: var(--Red);
+  font-size: 0.85rem;
+}
+
+.p-1 {
+  padding-bottom: 0.25em;
+}
+
+.heading {
+  grid-area: heading;
+}
+
+.item-1 {
+  grid-area: item-1;
+}
+
+.item-2 {
+  grid-area: item-2;
+}
+
+.item-3 {
+  grid-area: item-3;
+}
+
+.item-4 {
+  grid-area: item-4;
+}
+
+.item-4 > div {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 0.5em;
+}
+
+.item-4 > div > input[type=radio] + label {
+  width: 100%;
+}
+
+.item-5 {
+  grid-area: item-5;
+}
+
+.item-6 {
+  grid-area: item-6;
+}
+
+.item-6 > div > input {
+  height: -moz-min-content;
+  height: min-content;
+  margin-right: 1em;
+}
+
+.item-7 {
+  grid-area: item-7;
+}
+
+@media only screen and (max-width: 500px) {
+  form {
+    display: grid;
+    justify-content: space-around;
+    gap: 0.5em;
+    grid-template-areas: "heading" "item-1" "item-2" "item-3" "item-4" "item-5" "item-6" "item-7";
+  }
+  .item-4 > div {
+    flex-wrap: wrap;
+  }
+}/*# sourceMappingURL=style.css.map */
