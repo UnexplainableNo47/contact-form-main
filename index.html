@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
+  <script src="./index.js" defer></script>
+
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
   
@@ -21,23 +23,23 @@
 </head>
 <body>
   <div class="container">
-    <div class="contactForm">
-      <form id="contact-form" action="" method="post">
+    <div class="contactForm" role="main">
+      <form id="contact-form" method="dialog">
         <h1 role="heading" class="heading">Contact Us</h1>
         <div class="item-1">
           <label class="p-1" for="first-name">First Name</label>
           <input type="text" name="first-name" id="first-name">
-          <label class="error" for="first-name">This field is required</label>
+          <label class="error" for="first-name" id="FName-Err-Msg"></label>
         </div>
         <div class="item-2">
           <label class="p-1" for="last-name">Last Name</label>
           <input type="text" name="last-name" id="last-name">
-          <label class="error" for="last-name">This field is required</label>
+          <label class="error" for="last-name" id="LName-Err-Msg"></label>
         </div>
         <div class="item-3">
           <label class="p-1" for="email">Email Address</label>
           <input type="email" name="email" id="email">
-          <label class="error" for="email">This field is required</label>
+          <label class="error" for="email" id="Email-Err-Msg"></label>
         </div>
         <div class="item-4">
           <p class="p-1" >Query Type</p>
@@ -45,16 +47,16 @@
             <input type="radio" name="query-type" id="support-request"><label for="support-request">Support Request</label>
             <input type="radio" name="query-type" id="general-enquiry"><label for="general-enquiry">General Enquiry</label>
           </div>
-          <label class="error" for="query-type">Please select a query type</label>
+          <label class="error" for="query-type" id="Query-Err-Msg"></label>
         </div>
         <div class="item-5">
           <label class="p-1" for="Message">Message</label>
-          <textarea name="Message" id="Message" cols="30"></textarea>
-          <label class="error" for="Message">This field is required</label>
+          <textarea name="Message" id="Message" rows="6"></textarea>
+          <label class="error" for="Message" id="Message-Err-Msg"></label>
         </div>
         <div class="item-6">
           <div><input type="checkbox" name="consent" id="consent"><label for="consent">I consent to being contacted by the team</label></div>
-          <label class="error" for="consent">To submit this form, please consent to being contacted</label>
+          <label class="error" for="consent" id="Consent-Err-Msg"></label>
         </div>
         <div class="item-7">
           <button class="btnSubmit" type="submit">Submit</button>
@@ -62,24 +64,15 @@
       </form>
     </div>
   </div>
-  Query Type
-  General Enquiry
-  Support Request
-  Please select a query type
-
-  Message
-  This field is required
-
-  Submit
 <!--pop Up start-->
-<div class="popUp-panel">
+<div class="popUp-panel" id="success-Pop-Up">
   <h4>Message Sent!</h4>
   <p>Thanks for completing the form. We'll be in touch soon!</p>
 </div>
 <!--pop Up end-->
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="https://github.com/UnexplainableNo47">Marty</a>.
   </div>
 </body>
 </html>
